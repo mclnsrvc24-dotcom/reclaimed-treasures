@@ -9,7 +9,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, isLarge = false }: ProductCardProps) {
-  const { name, variant, price, originalPrice, tag, slug, image } = product;
+  const { name, variant, description, price, originalPrice, tag, slug, image } = product;
   const href = `/products/${slug}`;
 
   return (
@@ -49,6 +49,7 @@ export default function ProductCard({ product, isLarge = false }: ProductCardPro
           {name}
         </Link>
         <p className={styles.variant}>{variant}</p>
+        {description && <p className={styles.description}>{description}</p>}
         <div className={styles.priceRow}>
           {originalPrice ? (
             <>

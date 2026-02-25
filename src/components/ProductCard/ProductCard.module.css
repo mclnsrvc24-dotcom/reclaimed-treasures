@@ -96,6 +96,14 @@
   letter-spacing: var(--tracking-wide);
 }
 
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-light);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
 .priceRow {
   display: flex;
   align-items: baseline;
