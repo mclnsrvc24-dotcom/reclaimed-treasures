@@ -1,0 +1,414 @@
+/* ============================================================
+   REISE — Design Tokens
+   Brand: Vintage clothing & home goods, upcycled
+   Version: 1.0.0
+   ============================================================
+   Import in your root stylesheet:
+     @import './tokens.css';
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+:root {
+
+  /* ============================================================
+     TIER 1 — PRIMITIVE TOKENS
+     Raw values. Reference these only from semantic tokens.
+  ============================================================ */
+
+  /* — Cream Scale (primary brand palette) — */
+  --primitive-cream-0:   #FDFAF5;   /* Near white, warm */
+  --primitive-cream-50:  #F8F3EB;   /* Page background */
+  --primitive-cream-100: #F2EBE0;   /* Subtle surface */
+  --primitive-cream-200: #E8DDD0;   /* Card background */
+  --primitive-cream-300: #D9CEBC;   /* Border default */
+  --primitive-cream-400: #C8B9A5;   /* Border strong */
+  --primitive-cream-500: #B0A08C;   /* Disabled elements */
+
+  /* — Ink Scale (near-black, warm-toned) — */
+  --primitive-ink-950: #130F0B;     /* Deepest ink */
+  --primitive-ink-900: #1C1814;     /* Primary text */
+  --primitive-ink-800: #2C2620;     /* Secondary heading */
+  --primitive-ink-700: #3D3630;     /* Tertiary heading */
+  --primitive-ink-600: #52473F;     /* Body emphasis */
+  --primitive-ink-500: #6A5E55;     /* Muted text */
+  --primitive-ink-400: #87796F;     /* Placeholder */
+  --primitive-ink-300: #A39790;     /* Disabled text */
+
+  /* — Stone Scale (warm mid-grey) — */
+  --primitive-stone-400: #9B9490;
+  --primitive-stone-300: #B5AFAA;
+  --primitive-stone-200: #CFC9C5;
+  --primitive-stone-100: #E4E0DC;
+  --primitive-stone-50:  #F0EDEA;
+
+  /* — Denim Scale (editorial accent, from reference photograph) — */
+  --primitive-denim-700: #3A5470;
+  --primitive-denim-600: #4C6D8C;
+  --primitive-denim-500: #5F85A8;
+  --primitive-denim-400: #7A9DB8;
+  --primitive-denim-300: #9DBACF;
+  --primitive-denim-200: #C0D4E0;
+  --primitive-denim-100: #E0EAF0;
+
+  /* — Utility — */
+  --primitive-white:     #FFFFFF;
+  --primitive-black:     #000000;
+  --primitive-error:     #7A3128;   /* Warm, muted red */
+  --primitive-success:   #3A5C45;   /* Warm, muted green */
+
+
+  /* ============================================================
+     TIER 2 — SEMANTIC TOKENS
+     Purpose-driven. Use these throughout all component code.
+  ============================================================ */
+
+  /* — Backgrounds — */
+  --color-bg-page:         var(--primitive-cream-50);   /* Main page canvas */
+  --color-bg-surface:      var(--primitive-cream-0);    /* Cards, panels */
+  --color-bg-subtle:       var(--primitive-cream-100);  /* Section alternates */
+  --color-bg-muted:        var(--primitive-cream-200);  /* Input backgrounds */
+  --color-bg-inverted:     var(--primitive-ink-900);    /* Dark sections */
+  --color-bg-overlay:      rgba(26, 21, 16, 0.48);      /* Modals, drawers */
+
+  /* — Text — */
+  --color-text-primary:     var(--primitive-ink-900);   /* Headings, body */
+  --color-text-secondary:   var(--primitive-ink-600);   /* Subtext, captions */
+  --color-text-tertiary:    var(--primitive-ink-400);   /* Placeholder, hint */
+  --color-text-disabled:    var(--primitive-ink-300);
+  --color-text-inverted:    var(--primitive-cream-0);   /* On dark bg */
+  --color-text-link:        var(--primitive-ink-900);
+  --color-text-link-hover:  var(--primitive-ink-600);
+  --color-text-accent:      var(--primitive-denim-600); /* Rare accent */
+  --color-text-error:       var(--primitive-error);
+  --color-text-success:     var(--primitive-success);
+
+  /* — Borders — */
+  --color-border-strong:    var(--primitive-ink-900);   /* Active states, focus */
+  --color-border-default:   var(--primitive-cream-400); /* Cards, inputs */
+  --color-border-subtle:    var(--primitive-cream-300); /* Dividers */
+  --color-border-muted:     var(--primitive-cream-200); /* Ghost elements */
+  --color-border-inverted:  var(--primitive-cream-300); /* On dark bg */
+
+  /* — Interactive states — */
+  --color-action-default:   var(--primitive-ink-900);
+  --color-action-hover:     var(--primitive-ink-700);
+  --color-action-active:    var(--primitive-ink-600);
+  --color-action-disabled:  var(--primitive-stone-200);
+  --color-action-focus-ring: var(--primitive-denim-400);
+
+
+  /* ============================================================
+     TYPOGRAPHY
+  ============================================================ */
+
+  /* — Families — */
+  --font-display:  'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-body:     'Jost', 'Helvetica Neue', 'Arial', sans-serif;
+  --font-mono:     'Courier New', 'Courier', monospace; /* Rarely used */
+
+  /* — Scale (augmented fourth: 1.414 ratio) — */
+  --text-2xs:  0.563rem;   /*  ~9px  — Fine print, legal */
+  --text-xs:   0.75rem;    /*  12px  — Captions, labels */
+  --text-sm:   0.875rem;   /*  14px  — Secondary body */
+  --text-base: 1rem;       /*  16px  — Primary body */
+  --text-md:   1.125rem;   /*  18px  — Lead text */
+  --text-lg:   1.25rem;    /*  20px  — Small headings */
+  --text-xl:   1.5rem;     /*  24px  — Sub-headings */
+  --text-2xl:  2rem;       /*  32px  — Section headings */
+  --text-3xl:  2.827rem;   /*  ~45px — Page headings */
+  --text-4xl:  4rem;       /*  64px  — Hero headings */
+  --text-5xl:  5.653rem;   /*  ~90px — Editorial display */
+  --text-6xl:  8rem;       /* 128px  — Brand statement */
+  --text-7xl:  11.314rem;  /* ~181px — Mega display */
+  --text-8xl:  16rem;      /* 256px  — Full-bleed brand mark */
+
+  /* — Weights — */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+
+  /* — Line Heights — */
+  --leading-none:    1;
+  --leading-tightest: 1.05;
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose:   1.875;
+
+  /* — Letter Spacing — */
+  --tracking-tightest: -0.05em;
+  --tracking-tighter:  -0.03em;
+  --tracking-tight:    -0.01em;
+  --tracking-normal:    0em;
+  --tracking-wide:      0.05em;
+  --tracking-wider:     0.1em;
+  --tracking-widest:    0.2em;
+  --tracking-spaced:    0.3em;   /* For all-caps labels */
+
+
+  /* ============================================================
+     SPACING — 8pt base grid
+     Naming: --space-{n} where n = multiple of 4px (0.25rem)
+  ============================================================ */
+
+  --space-0:     0;
+  --space-px:    1px;
+  --space-0-5:   0.125rem;  /*  2px */
+  --space-1:     0.25rem;   /*  4px */
+  --space-1-5:   0.375rem;  /*  6px */
+  --space-2:     0.5rem;    /*  8px */
+  --space-2-5:   0.625rem;  /* 10px */
+  --space-3:     0.75rem;   /* 12px */
+  --space-4:     1rem;      /* 16px */
+  --space-5:     1.25rem;   /* 20px */
+  --space-6:     1.5rem;    /* 24px */
+  --space-7:     1.75rem;   /* 28px */
+  --space-8:     2rem;      /* 32px */
+  --space-10:    2.5rem;    /* 40px */
+  --space-12:    3rem;      /* 48px */
+  --space-14:    3.5rem;    /* 56px */
+  --space-16:    4rem;      /* 64px */
+  --space-20:    5rem;      /* 80px */
+  --space-24:    6rem;      /* 96px */
+  --space-28:    7rem;      /* 112px */
+  --space-32:    8rem;      /* 128px */
+  --space-40:    10rem;     /* 160px */
+  --space-48:    12rem;     /* 192px */
+  --space-56:    14rem;     /* 224px */
+  --space-64:    16rem;     /* 256px */
+  --space-80:    20rem;     /* 320px */
+  --space-96:    24rem;     /* 384px */
+
+  /* — Layout-specific — */
+  --layout-gutter:            var(--space-6);    /* Mobile side padding */
+  --layout-gutter-md:         var(--space-10);   /* Tablet side padding */
+  --layout-gutter-lg:         var(--space-16);   /* Desktop side padding */
+  --layout-gutter-xl:         var(--space-24);   /* Wide desktop padding */
+  --layout-section-gap:       var(--space-20);   /* Vertical section spacing */
+  --layout-section-gap-lg:    var(--space-32);   /* Large vertical spacing */
+  --layout-max-width:         90rem;             /* 1440px container max */
+  --layout-content-width:     72rem;             /* 1152px content max */
+  --layout-narrow-width:      48rem;             /* 768px narrow content */
+  --layout-card-width:        22rem;             /* 352px standard card */
+  --layout-nav-height:        4.5rem;            /* 72px nav bar height */
+  --layout-nav-height-sm:     3.5rem;            /* 56px mobile nav */
+
+
+  /* ============================================================
+     BORDERS & RADII
+  ============================================================ */
+
+  /* Radii — Reise uses no rounding. Zero radius is default. */
+  --radius-none:   0;
+  --radius-xs:     2px;    /* Only for very small badges */
+  --radius-sm:     4px;    /* Avoid using */
+  --radius-full:   9999px; /* Pills — use sparingly */
+
+  /* Border widths */
+  --border-thin:   1px;
+  --border-base:   1.5px;
+  --border-thick:  2px;
+
+  /* Signature decorative borders */
+  --border-dotted:        1px dotted var(--primitive-ink-900);
+  --border-dotted-subtle: 1px dotted var(--primitive-cream-400);
+  --border-dotted-muted:  1px dotted var(--primitive-cream-300);
+  --border-solid:         1px solid var(--primitive-cream-400);
+  --border-solid-strong:  1px solid var(--primitive-ink-900);
+
+
+  /* ============================================================
+     SHADOWS — Flat & editorial. Use minimally.
+  ============================================================ */
+
+  --shadow-none:  none;
+  --shadow-xs:    0 1px 3px 0 rgba(26, 21, 16, 0.05);
+  --shadow-sm:    0 2px 8px 0 rgba(26, 21, 16, 0.07);
+  --shadow-md:    0 4px 20px 0 rgba(26, 21, 16, 0.09);
+  --shadow-lg:    0 8px 40px 0 rgba(26, 21, 16, 0.12);
+  --shadow-image: 6px 6px 0 0 var(--primitive-cream-300); /* Editorial offset */
+  --shadow-focus: 0 0 0 3px var(--primitive-denim-200);    /* Accessibility ring */
+
+
+  /* ============================================================
+     MOTION & ANIMATION
+  ============================================================ */
+
+  --duration-instant:  50ms;
+  --duration-fast:     120ms;
+  --duration-normal:   220ms;
+  --duration-slow:     380ms;
+  --duration-slower:   550ms;
+  --duration-sluggish: 900ms;
+  --duration-cinematic: 1400ms;
+
+  --ease-linear:    linear;
+  --ease-default:   cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in:        cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:       cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-editorial: cubic-bezier(0.76, 0, 0.24, 1);  /* Signature Reise easing */
+  --ease-reveal:    cubic-bezier(0.16, 1, 0.3, 1);   /* Content reveals */
+
+
+  /* ============================================================
+     Z-INDEX — Stacking layers
+  ============================================================ */
+
+  --z-negative:  -1;
+  --z-base:       0;
+  --z-raised:     10;
+  --z-dropdown:   50;
+  --z-sticky:     100;
+  --z-overlay:    200;
+  --z-drawer:     300;
+  --z-modal:      400;
+  --z-toast:      500;
+  --z-tooltip:    600;
+
+
+  /* ============================================================
+     COMPONENT-SPECIFIC TOKENS
+     Composed from semantic tokens above.
+  ============================================================ */
+
+  /* Navigation */
+  --nav-bg:              var(--color-bg-page);
+  --nav-text:            var(--color-text-primary);
+  --nav-border:          var(--border-dotted-subtle);
+  --nav-height:          var(--layout-nav-height);
+  --nav-font:            var(--font-body);
+  --nav-font-size:       var(--text-xs);
+  --nav-tracking:        var(--tracking-widest);
+  --nav-weight:          var(--weight-medium);
+
+  /* Buttons */
+  --btn-font:            var(--font-body);
+  --btn-font-size:       var(--text-xs);
+  --btn-tracking:        var(--tracking-widest);
+  --btn-weight:          var(--weight-medium);
+  --btn-radius:          var(--radius-none);
+  --btn-transition:      color var(--duration-normal) var(--ease-editorial),
+                         background-color var(--duration-normal) var(--ease-editorial),
+                         border-color var(--duration-normal) var(--ease-editorial);
+
+  /* Primary button */
+  --btn-primary-bg:        var(--color-bg-inverted);
+  --btn-primary-text:      var(--color-text-inverted);
+  --btn-primary-border:    var(--primitive-ink-900);
+  --btn-primary-bg-hover:  var(--primitive-ink-700);
+
+  /* Ghost button */
+  --btn-ghost-bg:          transparent;
+  --btn-ghost-text:        var(--color-text-primary);
+  --btn-ghost-border:      var(--color-border-strong);
+  --btn-ghost-bg-hover:    var(--color-bg-muted);
+
+  /* Product card */
+  --card-bg:             var(--color-bg-surface);
+  --card-border:         var(--border-dotted-subtle);
+  --card-image-aspect:   3 / 4;   /* Portrait photography */
+  --card-gap:            var(--space-3);
+
+  /* Inputs */
+  --input-bg:            var(--color-bg-muted);
+  --input-border:        var(--border-solid);
+  --input-border-focus:  var(--border-solid-strong);
+  --input-text:          var(--color-text-primary);
+  --input-placeholder:   var(--color-text-tertiary);
+  --input-font:          var(--font-body);
+  --input-font-size:     var(--text-sm);
+  --input-padding-x:     var(--space-4);
+  --input-padding-y:     var(--space-3);
+  --input-radius:        var(--radius-none);
+
+  /* Price display */
+  --price-font:          var(--font-display);
+  --price-color:         var(--color-text-primary);
+  --price-sale-color:    var(--primitive-error);
+  --price-strike-color:  var(--color-text-tertiary);
+}
+
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   Applied when user prefers dark color scheme.
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-page:          var(--primitive-ink-950);
+    --color-bg-surface:       var(--primitive-ink-900);
+    --color-bg-subtle:        var(--primitive-ink-800);
+    --color-bg-muted:         var(--primitive-ink-700);
+    --color-bg-overlay:       rgba(12, 9, 6, 0.6);
+
+    --color-text-primary:     var(--primitive-cream-0);
+    --color-text-secondary:   var(--primitive-cream-300);
+    --color-text-tertiary:    var(--primitive-cream-400);
+    --color-text-inverted:    var(--primitive-ink-900);
+
+    --color-border-strong:    var(--primitive-cream-0);
+    --color-border-default:   var(--primitive-ink-600);
+    --color-border-subtle:    var(--primitive-ink-700);
+    --color-border-muted:     var(--primitive-ink-800);
+  }
+}
+
+
+/* ============================================================
+   RESET & BASE STYLES
+   Minimal opinionated reset aligned with Reise's design.
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color var(--duration-normal) var(--ease-editorial);
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-action-focus-ring);
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: var(--primitive-denim-200);
+  color: var(--primitive-ink-900);
+}

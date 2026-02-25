@@ -1,0 +1,122 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: relative;
+}
+
+/* ── Image ───────────────────────────────────────────────── */
+
+.imageLink {
+  display: block;
+  position: relative;
+}
+
+.image {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background-color: var(--color-bg-subtle);
+  overflow: hidden;
+  transition: background-color var(--duration-slow) var(--ease-editorial);
+}
+
+.imageLarge {
+  aspect-ratio: 2 / 3;
+}
+
+.imageLink:hover .image {
+  background-color: var(--color-bg-muted);
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primitive-cream-400);
+}
+
+/* ── Tag ─────────────────────────────────────────────────── */
+
+.tag {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-none);
+}
+
+.tagDefault {
+  background-color: var(--color-bg-inverted);
+  color: var(--color-text-inverted);
+}
+
+.tagSale {
+  background-color: var(--primitive-error);
+  color: var(--primitive-cream-0);
+}
+
+.tagSold {
+  background-color: var(--primitive-cream-400);
+  color: var(--primitive-cream-0);
+}
+
+/* ── Info ────────────────────────────────────────────────── */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+  transition: color var(--duration-fast) var(--ease-editorial);
+}
+
+.name:hover {
+  color: var(--color-text-secondary);
+}
+
+.variant {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-light);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--tracking-wide);
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-primary);
+  letter-spacing: var(--tracking-tight);
+}
+
+.priceSale {
+  color: var(--primitive-error);
+}
+
+.priceOriginal {
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  text-decoration: line-through;
+}
